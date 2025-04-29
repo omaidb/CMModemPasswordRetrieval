@@ -40,7 +40,7 @@ class ModemManager:
         self.method = ""
 
     def set_host(self):
-        host = input("Please enter the IP address of the modem (default:192.168.0.1): ") or "192.168.0.1"
+        host = input("Please enter the IP address of the modem (default:192.168.1.1): ") or "192.168.1.1"
         if not isinstance(host, str):
             raise TypeError("Host address must be a string.")
         if not host:
@@ -84,7 +84,8 @@ class ModemManager:
         return mac_address
 
     def enable_telnet(self):
-        url = f"http://{self.host}/cgi-bin/telnetenable.cgi?telnetenable=1&key={self.mac_address}"
+        # url = f"http://{self.host}/cgi-bin/telnetenable.cgi?telnetenable=1&key={self.mac_address}"
+        url = f"http://{self.host}/cgi-bin/telnetenable.cgi?telnetenable=1&key=3CFC5C3191C0"
         logger.debug(f"Telnet Enable URL: {url}")
         try:
             response = requests.get(url, timeout=5)
