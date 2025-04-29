@@ -1,12 +1,12 @@
 import os  # 导入操作系统相关模块
 import re  # 导入正则表达式模块
 import subprocess  # 导入子进程模块，用于执行系统命令
-import telnetlib  # 导入Telnet库，用于Telnet连接
+# import telnetlib  # 导入Telnet库，用于Telnet连接
+import Exscript.protocols.telnetlib as telnetlib  # 导入Exscript库中的Telnet模块，用于Telnet连接
 import time  # 导入时间模块，用于延时操作
 
 import requests  # 导入requests库，用于HTTP请求
 from loguru import logger  # 导入loguru库，用于日志记录
-
 
 def clear_console():
     # 清空控制台
